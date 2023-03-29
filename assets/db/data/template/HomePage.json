@@ -1,0 +1,630 @@
+{
+  "flutterType": "Scaffold",
+  "constructor": {
+    "jsInvoke": "HomePage.js",
+    "args": {
+      "switch": "constructor"
+    }
+  },
+  "meta": {
+  },
+  "appBar": {
+    "flutterType": "AppBar",
+    "title": {
+      "flutterType": "Text",
+      "label": "E-Humidor",
+      "style": {
+        "flutterType": "TextStyle",
+        "fontSize": 17
+      }
+    }
+  },
+  "body": {
+    "flutterType": "CustomScrollView",
+    "onStateDataUpdate": true,
+    "children": [
+      {
+        "flutterType": "Container",
+        "margin": "22,17,22,17",
+        "child": {
+          "flutterType": "Row",
+          "newContext": false,
+          "crossAxisAlignment": "start",
+          "children": [
+            {
+              "flutterType": "Expanded",
+              "child": {
+                "flutterType": "Text",
+                "label": "Мои Хьюмидоры",
+                "style": {
+                  "flutterType": "TextStyle",
+                  "fontSize": 17,
+                  "fontWeight": "bold",
+                  "color": "schema:secondary"
+                }
+              }
+            },
+            {
+              "flutterType": "SizedBox",
+              "width": 20
+            },
+            {
+              "flutterType": "Text",
+              "label": "${state(count)}",
+              "style": {
+                "flutterType": "TextStyle",
+                "color": "schema:secondary"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ChildrenExtension": "StateDataIterator",
+        "key": "HumidorList",
+        "ifDataEmpty": {
+          "flutterType": "Margin",
+          "margin": "22,0,22,20",
+          "child": {
+            "flutterType": "Text",
+            "label": "Для создания своего Хьюмидора нажимай (+) в нижнем меню приложения."
+          }
+        },
+        "template": {
+          "flutterType": "Slidable",
+          "newContext": false,
+          "children": [
+            {
+              "flutterType": "SizedBox",
+              "width": 100,
+              "child": {
+                "flutterType": "Row",
+                "mainAxisAlignment": "center",
+                "newContext": false,
+                "children": [
+                  {
+                    "flutterType": "RawMaterialButton",
+                    "fillColor": "red",
+                    "padding": 10,
+                    "onPressed": {
+                      "jsInvoke": "HomePage.js",
+                      "args": {
+                        "switch": "onRemove",
+                        "uuid_data": "${uuid_data}",
+                        "templateArguments": [
+                          "uuid_data"
+                        ]
+                      }
+                    },
+                    "icon": {
+                      "flutterType": "Icon",
+                      "src": "delete_outline",
+                      "color": "white",
+                      "size": 20
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "child": {
+            "flutterType": "Margin",
+            "margin": "12,0,12,16",
+            "child": {
+              "flutterType": "Material",
+              "color": "schema:onBackground",
+              "borderRadius": 10,
+              "child": {
+                "flutterType": "InkWell",
+                "onTap": {
+                  "sysInvoke": "NavigatorPush",
+                  "args": {
+                    "name": "Humidor",
+                    "link": {
+                      "template": "Humidor.json",
+                      "humidor": "${uuid_data}"
+                    },
+                    "label": "${value_data.label}",
+                    "templateArguments": [
+                      "label",
+                      "link.humidor"
+                    ]
+                  }
+                },
+                "customBorder": {
+                  "flutterType": "RoundedRectangleBorder",
+                  "borderRadius": 10
+                },
+                "child": {
+                  "flutterType": "Column",
+                  "crossAxisAlignment": "start",
+                  "newContext": false,
+                  "children": [
+                    {
+                      "flutterType": "Container",
+                      "padding": "17,15,17,7",
+                      "child": {
+                        "flutterType": "Row",
+                        "newContext": false,
+                        "children": [
+                          {
+                            "flutterType": "Expanded",
+                            "flex": 5,
+                            "child": {
+                              "flutterType": "Text",
+                              "style": {
+                                "flutterType": "TextStyle",
+                                "fontSize": 17,
+                                "fontWeight": "bold"
+                              },
+                              "label": "${value_data.label}"
+                            }
+                          },
+                          {
+                            "flutterType": "Expanded",
+                            "flex": 2,
+                            "child": {
+                              "flutterType": "Text",
+                              "style": {
+                                "flutterType": "TextStyle",
+                                "fontSize": 17
+                              },
+                              "label": "+100"
+                            }
+                          },
+                          {
+                            "flutterType": "Expanded",
+                            "flex": 2,
+                            "child": {
+                              "flutterType": "Text",
+                              "textAlign": "end",
+                              "style": {
+                                "flutterType": "TextStyle",
+                                "fontSize": 17
+                              },
+                              "label": "-58"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "flutterType": "Divider",
+                      "color": "schema:background",
+                      "thickness": 1
+                    },
+                    {
+                      "flutterType": "Container",
+                      "padding": "17,7,17,15",
+                      "child": {
+                        "flutterType": "Row",
+                        "crossAxisAlignment": "start",
+                        "newContext": false,
+                        "children": [
+                          {
+                            "flutterType": "Expanded",
+                            "flex": 5,
+                            "child": {
+                              "flutterType": "Column",
+                              "crossAxisAlignment": "start",
+                              "newContext": false,
+                              "children": [
+                                {
+                                  "flutterType": "Opacity",
+                                  "opacity": 0.4,
+                                  "child": {
+                                    "flutterType": "Text",
+                                    "style": {
+                                      "flutterType": "TextStyle",
+                                      "fontSize": 15
+                                    },
+                                    "label": "В коллекции:"
+                                  }
+                                },
+                                {
+                                  "flutterType": "Row",
+                                  "crossAxisAlignment": "center",
+                                  "children": [
+                                    {
+                                      "flutterType": "Text",
+                                      "style": {
+                                        "flutterType": "TextStyle",
+                                        "fontSize": 34,
+                                        "fontWeight": "bold"
+                                      },
+                                      "label": "42"
+                                    },
+                                    {
+                                      "flutterType": "SizedBox",
+                                      "width": 5
+                                    },
+                                    {
+                                      "flutterType": "Opacity",
+                                      "opacity": 0.4,
+                                      "child": {
+                                        "flutterType": "Text",
+                                        "style": {
+                                          "flutterType": "TextStyle",
+                                          "fontSize": 15
+                                        },
+                                        "label": "шт."
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "flutterType": "Expanded",
+                            "flex": 2,
+                            "child": {
+                              "flutterType": "Column",
+                              "crossAxisAlignment": "start",
+                              "newContext": false,
+                              "children": [
+                                {
+                                  "flutterType": "Opacity",
+                                  "opacity": 0.4,
+                                  "child": {
+                                    "flutterType": "Text",
+                                    "style": {
+                                      "flutterType": "TextStyle",
+                                      "fontSize": 15
+                                    },
+                                    "label": "Неделя:"
+                                  }
+                                },
+                                {
+                                  "flutterType": "Opacity",
+                                  "opacity": 0.4,
+                                  "child": {
+                                    "flutterType": "Text",
+                                    "style": {
+                                      "flutterType": "TextStyle",
+                                      "fontSize": 15
+                                    },
+                                    "label": "Месяц:"
+                                  }
+                                },
+                                {
+                                  "flutterType": "Opacity",
+                                  "opacity": 0.4,
+                                  "child": {
+                                    "flutterType": "Text",
+                                    "style": {
+                                      "flutterType": "TextStyle",
+                                      "fontSize": 15
+                                    },
+                                    "label": "Год:"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "flutterType": "Expanded",
+                            "flex": 2,
+                            "child": {
+                              "flutterType": "Column",
+                              "crossAxisAlignment": "end",
+                              "newContext": false,
+                              "children": [
+                                {
+                                  "flutterType": "Text",
+                                  "style": {
+                                    "flutterType": "TextStyle",
+                                    "fontSize": 15
+                                  },
+                                  "label": "-16"
+                                },
+                                {
+                                  "flutterType": "Text",
+                                  "style": {
+                                    "flutterType": "TextStyle",
+                                    "fontSize": 15
+                                  },
+                                  "label": "-18"
+                                },
+                                {
+                                  "flutterType": "Text",
+                                  "style": {
+                                    "flutterType": "TextStyle",
+                                    "fontSize": 15
+                                  },
+                                  "label": "-24"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "flutterType": "Container",
+        "margin": "22,0,22,15",
+        "child": {
+          "flutterType": "Text",
+          "label": "Дополнительно",
+          "style": {
+            "flutterType": "TextStyle",
+            "fontSize": 17,
+            "fontWeight": "bold",
+            "color": "schema:secondary"
+          }
+        }
+      },
+      {
+        "flutterType": "Container",
+        "margin": "12,0,12,0",
+        "height": 12,
+        "width": "infinity",
+        "decoration": {
+          "flutterType": "BoxDecoration",
+          "color": "schema:onBackground",
+          "borderRadius": "10,10,0,0"
+        }
+      },
+      {
+        "flutterType": "Container",
+        "margin": "12,0,12,0",
+        "padding": "17,0,17,0",
+        "color": "schema:onBackground",
+        "child": {
+          "flutterType": "Material",
+          "color": "schema:onBackground",
+          "child": {
+            "flutterType": "InkWell",
+            "customBorder": {
+              "flutterType": "RoundedRectangleBorder",
+              "borderRadius": 10
+            },
+            "child": {
+              "flutterType": "Row",
+              "children": [
+                {
+                  "flutterType": "Expanded",
+                  "child": {
+                    "flutterType": "Text",
+                    "label": "Последнии покуры",
+                    "style": {
+                      "flutterType": "TextStyle",
+                      "fontSize": 16
+                    }
+                  }
+                },
+                {
+                  "flutterType": "Icon",
+                  "src": "arrow_forward_ios_sharp",
+                  "size": 17,
+                  "color": "#999999"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "flutterType": "Column",
+        "children": [
+          {
+            "flutterType": "Container",
+            "margin": "12,0,12,0",
+            "height": "12",
+            "width": "infinity",
+            "color": "schema:onBackground"
+          },
+          {
+            "flutterType": "Divider",
+            "color": "schema:background",
+            "height": 1
+          },
+          {
+            "flutterType": "Container",
+            "margin": "12,0,12,0",
+            "height": "12",
+            "width": "infinity",
+            "color": "schema:onBackground"
+          }
+        ]
+      },
+      {
+        "flutterType": "Container",
+        "margin": "12,0,12,0",
+        "padding": "17,0,17,0",
+        "color": "schema:onBackground",
+        "child": {
+          "flutterType": "Material",
+          "color": "schema:onBackground",
+          "child": {
+            "flutterType": "InkWell",
+            "customBorder": {
+              "flutterType": "RoundedRectangleBorder",
+              "borderRadius": 10
+            },
+            "child": {
+              "flutterType": "Row",
+              "children": [
+                {
+                  "flutterType": "Expanded",
+                  "child": {
+                    "flutterType": "Text",
+                    "label": "Календарь событий",
+                    "style": {
+                      "flutterType": "TextStyle",
+                      "fontSize": 16
+                    }
+                  }
+                },
+                {
+                  "flutterType": "Icon",
+                  "src": "arrow_forward_ios_sharp",
+                  "size": 17,
+                  "color": "#999999"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "flutterType": "Column",
+        "children": [
+          {
+            "flutterType": "Container",
+            "margin": "12,0,12,0",
+            "height": "12",
+            "width": "infinity",
+            "color": "schema:onBackground"
+          },
+          {
+            "flutterType": "Divider",
+            "color": "schema:background",
+            "height": 1
+          },
+          {
+            "flutterType": "Container",
+            "margin": "12,0,12,0",
+            "height": "12",
+            "width": "infinity",
+            "color": "schema:onBackground"
+          }
+        ]
+      },
+      {
+        "flutterType": "Container",
+        "margin": "12,0,12,0",
+        "padding": "17,0,17,0",
+        "color": "schema:onBackground",
+        "child": {
+          "flutterType": "Material",
+          "color": "schema:onBackground",
+          "child": {
+            "flutterType": "InkWell",
+            "customBorder": {
+              "flutterType": "RoundedRectangleBorder",
+              "borderRadius": 10
+            },
+            "child": {
+              "flutterType": "Row",
+              "children": [
+                {
+                  "flutterType": "Expanded",
+                  "child": {
+                    "flutterType": "Text",
+                    "label": "Карта мест для курения",
+                    "style": {
+                      "flutterType": "TextStyle",
+                      "fontSize": 16
+                    }
+                  }
+                },
+                {
+                  "flutterType": "Icon",
+                  "src": "arrow_forward_ios_sharp",
+                  "size": 17,
+                  "color": "#999999"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "flutterType": "Column",
+        "children": [
+          {
+            "flutterType": "Container",
+            "margin": "12,0,12,0",
+            "height": "12",
+            "width": "infinity",
+            "color": "schema:onBackground"
+          },
+          {
+            "flutterType": "Divider",
+            "color": "schema:background",
+            "height": 1
+          },
+          {
+            "flutterType": "Container",
+            "margin": "12,0,12,0",
+            "height": "12",
+            "width": "infinity",
+            "color": "schema:onBackground"
+          }
+        ]
+      },
+      {
+        "flutterType": "Container",
+        "margin": "12,0,12,0",
+        "padding": "17,0,17,0",
+        "color": "schema:onBackground",
+        "child": {
+          "flutterType": "Material",
+          "color": "schema:onBackground",
+          "child": {
+            "flutterType": "InkWell",
+            "customBorder": {
+              "flutterType": "RoundedRectangleBorder",
+              "borderRadius": 10
+            },
+            "child": {
+              "flutterType": "Row",
+              "children": [
+                {
+                  "flutterType": "Expanded",
+                  "child": {
+                    "flutterType": "Text",
+                    "label": "Архив",
+                    "style": {
+                      "flutterType": "TextStyle",
+                      "fontSize": 16
+                    }
+                  }
+                },
+                {
+                  "flutterType": "Icon",
+                  "src": "arrow_forward_ios_sharp",
+                  "size": 17,
+                  "color": "#999999"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "flutterType": "Container",
+        "margin": "12,0,12,10",
+        "height": 12,
+        "width": "infinity",
+        "decoration": {
+          "flutterType": "BoxDecoration",
+          "color": "schema:onBackground",
+          "borderRadius": "0,0,10,10"
+        }
+      }
+    ]
+  },
+  "floatingActionButton": {
+    "flutterType": "FloatingActionButton",
+    "child": {
+      "flutterType": "Icon",
+      "src": "add"
+    },
+    "onPressed": {
+      "jsInvoke": "HomePage.js",
+      "args": {
+        "changeContext": "lastPage",
+        "switch": "addHumidor"
+      }
+    }
+  }
+}

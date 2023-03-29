@@ -1,0 +1,99 @@
+{
+  "flutterType": "Scaffold",
+  "meta": {
+    "title": "Hello world",
+    "ts": 1677405312
+  },
+  "appBar": {
+    "flutterType": "AppBar",
+    "title": {
+      "flutterType": "Text",
+      "label": "${template.meta.title}"
+    }
+  },
+  "body": {
+    "flutterType": "Scrollbar",
+    "child": {
+      "flutterType": "ListView",
+      "children": [
+        {
+          "flutterType": "Text",
+          "label": "TimestampToDate: ${container(root, template.meta.ts)|timestampToDate(dd-MM-yyyy)}"
+        },
+        {
+          "flutterType": "Text",
+          "meta": {
+            "opa": "popa"
+          },
+          "linkContainer": "halom",
+          "link": {
+            "data": "Test2.json"
+          },
+          "linkDefault": {
+            "data": {
+              "x": ""
+            }
+          },
+          "label": "Hello world translate(${translate(hey)}) ${data.x} ${template.meta.opa} [${container(root, template.meta.title)}]"
+        },
+        {
+          "flutterType": "DataIterator",
+          "dataSource": {
+            "type": "db",
+            "select": "select uuid_data from data where type_data = 'systemData'"
+          },
+          "linkDefault": {
+            "data": {
+              "x": ""
+            },
+            "template": {
+              "flutterType": "Text",
+              "label": "Hey ${dataSource.uuid} ${data.x}"
+            }
+          }
+        },
+        {
+          "flutterType": "Button",
+          "child": {
+            "flutterType": "Text",
+            "label": "press-me"
+          },
+          "onPressed": {
+            "sysInvoke": "NavigatorPush",
+            "args": {
+              "uuid": "tab1.json",
+              "label": "_________"
+            }
+          }
+        },
+        {
+          "flutterType": "Button",
+          "child": {
+            "flutterType": "Text",
+            "label": "back"
+          },
+          "onPressed": {
+            "sysInvoke": "NavigatorPop",
+            "args": {
+              "count": 2
+            }
+          }
+        },
+        {
+          "flutterType": "Button",
+          "child": {
+            "flutterType": "Text",
+            "label": "change text2"
+          },
+          "onPressed": {
+            "jsInvoke": "HomePage.js",
+            "args": {
+              "uuid": "Test2.json"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "floatingActionButton": {}
+}
