@@ -14,6 +14,7 @@ if (bridge.args["switch"] == "constructor") {
 }
 
 if (bridge.args["switch"] == "checkCountData") {
+    //console.log(bridge.state["HumidorList"]);
     bridge.call('SetStateData', {
         "key": "count",
         "value": bridge.state["HumidorList"].length + ""

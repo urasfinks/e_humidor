@@ -6,9 +6,8 @@ import 'package:rjdu/navigator_app.dart';
 import 'package:rjdu/rjdu.dart';
 
 void main() async {
-  GlobalSettings().setHost("http://192.168.0.20:8453");
+  GlobalSettings().setHost("http://192.168.0.31:8453");
   RjDu.init();
-
 
   NavigatorApp.tab.add(
     BottomTabItem({
@@ -44,14 +43,14 @@ void main() async {
       },
       'content': {
         'flutterType': 'Notify',
-        'link': {'template': 'tab2.json'},
+        'link': {'template': 'Account.json'},
         'linkContainer': 'root',
         'linkDefault': {
           'template': {
             "flutterType": "Scaffold",
             "appBar": {
               "flutterType": "AppBar",
-              "title": {"flutterType": "Text", "label": "linkDefault Tab2"}
+              "title": {"flutterType": "Text", "label": "Аккаунт"}
             }
           }
         }

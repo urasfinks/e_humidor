@@ -1,0 +1,117 @@
+{
+  "flutterType": "Scaffold",
+  "constructor": {
+    "jsInvoke": "Account.js",
+    "args": {
+      "switch": "constructor"
+    }
+  },
+  "meta": {
+  },
+  "appBar": {
+    "flutterType": "AppBar",
+    "title": {
+      "flutterType": "Text",
+      "label": "Аккаунт",
+      "style": {
+        "flutterType": "TextStyle",
+        "fontSize": 17
+      }
+    }
+  },
+  "body": {
+    "flutterType": "GestureDetector",
+    "onTap": {
+      "sysInvoke": "HideKeyboard"
+    },
+    "child": {
+      "flutterType": "CustomScrollView",
+      "children": [
+        {
+          "flutterType": "Container",
+          "color": "schema:background",
+          "padding": "10,10,10,10",
+          "child": {
+            "flutterType": "TextField",
+            "style": {
+              "flutterType": "TextStyle",
+              "fontSize": 17
+            },
+            "name": "EmailValue",
+            "decoration": {
+              "flutterType": "InputDecoration",
+              "hintText": "E-mail",
+              "contentPadding": "15,0,15,0",
+              "filled": true,
+              "fillColor": "schema:onBackground",
+              "border": {
+                "flutterType": "OutlineInputBorder"
+              },
+              "suffixIconConstraints": {
+                "flutterType": "BoxConstraints",
+                "minHeight": 44,
+                "maxHeight": 44
+              },
+              "suffixIcon": {
+                "flutterType": "IconButton",
+                "padding": 0,
+                "icon": {
+                  "flutterType": "Icon",
+                  "color": "grey",
+                  "src": "clear",
+                  "size": 18
+                },
+                "onPressed": {
+                  "sysInvoke": "ResetTextController",
+                  "args": {
+                    "key": "EmailValue"
+                  }
+                }
+              },
+              "enabledBorder": {
+                "flutterType": "OutlineInputBorder",
+                "borderRadius": 10,
+                "borderSide": {
+                  "flutterType": "BorderSide",
+                  "color": "transparent",
+                  "width": 0
+                }
+              },
+              "focusedBorder": {
+                "flutterType": "OutlineInputBorder",
+                "borderRadius": 10,
+                "borderSide": {
+                  "flutterType": "BorderSide",
+                  "color": "transparent",
+                  "width": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "flutterType": "Container",
+          "color": "schema:background",
+          "padding": "10,0,10,0",
+          "child": {
+            "flutterType": "MaterialButton",
+            "height": 44,
+            "child": {
+              "flutterType": "Text",
+              "label": "Получить код",
+              "style": {
+                "flutterType": "TextStyle",
+                "fontSize": 14,
+                "color": "white"
+              }
+            },
+            "shape": {
+              "flutterType": "RoundedRectangleBorder",
+              "borderRadius": 10
+            }
+          }
+        }
+      ]
+    }
+  }
+}
