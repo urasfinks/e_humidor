@@ -6,6 +6,7 @@ if (typeof Bridge == 'undefined') {
         }
 
         clearAll() {
+            this.pageUuid = undefined;
             this.args = undefined;
             this.container = undefined;
             this.context = undefined;
@@ -14,6 +15,7 @@ if (typeof Bridge == 'undefined') {
         }
 
         call(invoke, args) {
+            args["_rjduPageUuid"] = this.pageUuid; //Зарезервированное системное имя, что бы связать контекст исполнения
             var result = sendMessage(invoke, JSON.stringify(args));
             if (result == undefined || result == null) {
                 return;
