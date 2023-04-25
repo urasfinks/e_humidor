@@ -12,11 +12,11 @@ if (bridge.args["switch"] == "onSelect") {
     cigar["timestamp"] = new Date().getTime();
     cigar["uuid_cigar"] = bridge.args["uuid_cigar"];
 
-    bridge.call("Alert", {
+    /*bridge.call("Alert", {
         "label": "Добавлено"
-    });
+    });*/
     bridge.call('DataSourceSet', {
-        "uuid": bridge.call('Uuid', {}),
+        "uuid": bridge.call('Uuid', {})["uuid"],
         "value": cigar,
         "parent": bridge.args["uuid_humidor"],
         "type": "userDataRSync",
@@ -35,9 +35,7 @@ if (bridge.args["switch"] == "complete") {
         "key": "name",
         "value": "Humidor"
     });
-    bridge.call("NavigatorPop", {
-        "delay": 1000
-    });
+    bridge.call("NavigatorPop", {});
 }
 
 if (bridge.args["switch"] == "onChange") {
