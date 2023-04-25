@@ -1,13 +1,5 @@
 {
   "flutterType": "Scaffold",
-  "constructor": {
-    "jsInvoke": "HumidorSearch.js",
-    "args": {
-      "switch": "constructor"
-    }
-  },
-  "meta": {
-  },
   "appBar": {
     "flutterType": "AppBar",
     "title": {

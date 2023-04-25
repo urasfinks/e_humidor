@@ -1,13 +1,5 @@
 {
   "flutterType": "Scaffold",
-  "constructor": {
-    "jsInvoke": "HomePage.js",
-    "args": {
-      "switch": "constructor"
-    }
-  },
-  "meta": {
-  },
   "appBar": {
     "flutterType": "AppBar",
     "title": {
@@ -128,7 +120,14 @@
                     "templateArguments": [
                       "label",
                       "link.humidor"
-                    ]
+                    ],
+                    "constructor": {
+                      "jsInvoke": "Humidor.js",
+                      "args": {
+                        "includePageArgument": true,
+                        "switch": "constructor"
+                      }
+                    }
                   }
                 },
                 "customBorder": {

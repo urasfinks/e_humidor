@@ -29,6 +29,12 @@ void main() async {
               "title": {"flutterType": "Text", "label": "E-Humidor"}
             }
           }
+        },
+        'constructor': {
+          'jsInvoke': 'HomePage.js',
+          'args': {
+            'switch': 'constructor'
+          }
         }
       }
     }),
@@ -52,6 +58,12 @@ void main() async {
               "flutterType": "AppBar",
               "title": {"flutterType": "Text", "label": "Аккаунт"}
             }
+          }
+        },
+        'constructor': {
+          'jsInvoke': 'Account.js',
+          'args': {
+            'switch': 'constructor'
           }
         }
       }

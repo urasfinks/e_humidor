@@ -1,14 +1,5 @@
 {
   "flutterType": "Scaffold",
-  "constructor": {
-    "jsInvoke": "Humidor.js",
-    "args": {
-      "includePageArgument": true,
-      "switch": "constructor"
-    }
-  },
-  "meta": {
-  },
   "appBar": {
     "flutterType": "AppBar",
     "title": {
@@ -241,7 +232,13 @@
         "label": "Добавить в Хьюмидор",
         "templateArguments": [
           "humidor"
-        ]
+        ],
+        "constructor": {
+          "jsInvoke": "HumidorSearch.js",
+          "args": {
+            "switch": "constructor"
+          }
+        }
       }
     }
   }
