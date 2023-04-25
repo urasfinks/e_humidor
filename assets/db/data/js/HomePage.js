@@ -35,7 +35,7 @@ if (bridge.args["switch"] == "onRemove") {
 }
 
 if (bridge.args["switch"] == "addHumidor") {
-    var uuid = bridge.call('Uuid', {});
+    var uuid = bridge.call('Uuid', {})["uuid"];
     bridge.call('DataSourceSet', {
         "uuid": uuid,
         "value": {
