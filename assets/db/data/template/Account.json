@@ -1,13 +1,5 @@
 {
   "flutterType": "Scaffold",
-  "constructor": {
-    "jsInvoke": "Account.js",
-    "args": {
-      "switch": "constructor"
-    }
-  },
-  "meta": {
-  },
   "appBar": {
     "flutterType": "AppBar",
     "title": {
@@ -96,6 +88,13 @@
           "child": {
             "flutterType": "MaterialButton",
             "height": 44,
+            "onPressed": {
+              "jsInvoke": "Account.js",
+              "args": {
+                "includeStateData": true,
+                "switch": "GetCode"
+              }
+            },
             "child": {
               "flutterType": "Text",
               "label": "Получить код",
