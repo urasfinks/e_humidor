@@ -15,6 +15,7 @@
       },
       {
         "flutterType": "TextField",
+        "keyboardType": "number",
         "style": {
           "flutterType": "TextStyle",
           "fontSize": 17
@@ -81,7 +82,8 @@
           "jsInvoke": "Account.js",
           "args": {
             "includeStateData": true,
-            "switch": "GetCode"
+            "includePageArgument": true,
+            "switch": "ConfirmCode"
           }
         },
         "child": {

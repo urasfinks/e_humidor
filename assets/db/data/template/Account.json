@@ -25,6 +25,8 @@
           "padding": "10,10,10,10",
           "child": {
             "flutterType": "TextField",
+            "keyboardType": "emailAddress",
+            "textCapitalization": "none",
             "style": {
               "flutterType": "TextStyle",
               "fontSize": 17
