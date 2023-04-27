@@ -42,7 +42,7 @@
             },
             {
               "flutterType": "Text",
-              "label": "${state(count)}",
+              "label": "${state(count, 0)}",
               "style": {
                 "flutterType": "TextStyle",
                 "color": "schema:secondary"
