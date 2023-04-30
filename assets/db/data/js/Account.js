@@ -3,6 +3,8 @@ if (bridge.args["switch"] == "constructor") {
 }
 
 if (bridge.args["switch"] == "GetCode") {
+    bridge.call("HideKeyboard", {});
+    bridge.call("CustomLoaderOpen", {});
     bridge.call('Http', {
         "uri": "/getcode",
         "body": {
@@ -19,6 +21,7 @@ if (bridge.args["switch"] == "GetCode") {
 }
 
 if (bridge.args["switch"] == "GetCodeResponse") {
+    bridge.call("CustomLoaderClose", {});
     console.log(bridge.args);
     if (bridge.args["body"]["status"] == false) {
         bridge.call("Alert", {
@@ -28,7 +31,7 @@ if (bridge.args["switch"] == "GetCodeResponse") {
     } else {
         bridge.call("NavigatorPush", {
             "name": "Humidor",
-            "modalBottomSheet": true,
+            "type": "BottomSheet",
             "mail": bridge.state["EmailValue"],
             "link": {
                 "template": "AccountCode.json",

@@ -31,6 +31,13 @@
               "flutterType": "TextStyle",
               "fontSize": 17
             },
+            "onSubmitted": {
+              "jsInvoke": "Account.js",
+              "args": {
+                "includeStateData": true,
+                "switch": "GetCode"
+              }
+            },
             "name": "EmailValue",
             "decoration": {
               "flutterType": "InputDecoration",
