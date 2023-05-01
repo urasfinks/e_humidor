@@ -1,5 +1,16 @@
 if (bridge.args["switch"] == "constructor") {
-    console.log("Hello constructor");
+    let isAuth = bridge.call('GetStorage', {
+        "key": "isAuth",
+        "default": "false"
+    })["isAuth"];
+
+    console.log("Hello constructor: "+isAuth);
+
+    bridge.call('SetStateData', {
+        "key": "SwitchKey",
+        "value": isAuth == "true" ? "auth" : "default"
+    });
+
 }
 
 if (bridge.args["switch"] == "GetCode") {
@@ -41,7 +52,7 @@ if (bridge.args["switch"] == "GetCodeResponse") {
 }
 
 if (bridge.args["switch"] == "ConfirmCode") {
-    console.log(bridge.state);
+    //console.log(bridge.state);
     bridge.call('Http', {
         "uri": "/signin",
         "body": {
@@ -51,6 +62,7 @@ if (bridge.args["switch"] == "ConfirmCode") {
         "onResponse": {
             "jsInvoke": "Account.js",
             "args": {
+                "includePageArgument": true,
                 "switch": "ConfirmCodeResponse"
             }
         }
@@ -65,6 +77,16 @@ if (bridge.args["switch"] == "ConfirmCodeResponse") {
             "label": bridge.args["body"]["exception"].join(", ")
         });
     } else {
-
+        bridge.call('SetStorage', {
+            "key": "isAuth",
+            "value": "true"
+        });
+        bridge.call('SetStorage', {
+            "key": "mail",
+            "value": bridge.pageArgs["mail"]
+        });
+        bridge.call("NavigatorPop", {
+            "reloadParent": true
+        });
     }
 }
