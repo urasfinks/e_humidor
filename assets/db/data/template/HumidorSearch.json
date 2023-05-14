@@ -3,222 +3,215 @@
   "appBar": {
     "flutterType": "AppBar",
     "title": {
-      "flutterType": "Text",
-      "label": "Добавить в Хьюмидор"
-    }
-  },
-  "body": {
-    "flutterType": "Column",
-    "children": [
-      {
-        "flutterType": "Container",
-        "color": "schema:background",
-        "padding": "10,10,10,10",
-        "child": {
-          "flutterType": "TextField",
-          "style": {
-            "flutterType": "TextStyle",
-            "fontSize": 17
+      "flutterType": "TextField",
+      "style": {
+        "flutterType": "TextStyle",
+        "fontSize": 17
+      },
+      "name": "SearchValue",
+      "onChanged": {
+        "jsInvoke": "HumidorSearch.js",
+        "args": {
+          "includeStateData": true,
+          "switch": "onChange"
+        }
+      },
+      "onSubmitted": {
+        "sysInvoke": "HideKeyboard"
+      },
+      "decoration": {
+        "flutterType": "InputDecoration",
+        "hintText": "Поиск",
+        "contentPadding": "15,0,15,0",
+        "filled": true,
+        "fillColor": "schema:onBackground",
+        "border": {
+          "flutterType": "OutlineInputBorder"
+        },
+        "suffixIconConstraints": {
+          "flutterType": "BoxConstraints",
+          "minHeight": 44,
+          "maxHeight": 44
+        },
+        "suffixIcon": {
+          "flutterType": "IconButton",
+          "padding": 0,
+          "icon": {
+            "flutterType": "Icon",
+            "color": "grey",
+            "src": "clear",
+            "size": 18
           },
-          "name": "SearchValue",
-          "onChanged": {
-            "jsInvoke": "HumidorSearch.js",
-            "args": {
-              "includeStateData": true,
-              "switch": "onChange"
-            }
-          },
-          "decoration": {
-            "flutterType": "InputDecoration",
-            "hintText": "Поиск",
-            "contentPadding": "15,0,15,0",
-            "filled": true,
-            "fillColor": "schema:onBackground",
-            "border": {
-              "flutterType": "OutlineInputBorder"
-            },
-            "suffixIconConstraints": {
-              "flutterType": "BoxConstraints",
-              "minHeight": 44,
-              "maxHeight": 44
-            },
-            "suffixIcon": {
-              "flutterType": "IconButton",
-              "padding": 0,
-              "icon": {
-                "flutterType": "Icon",
-                "color": "grey",
-                "src": "clear",
-                "size": 18
-              },
-              "onPressed": {
+          "onPressed": {
+            "list": [
+              {
                 "sysInvoke": "ResetTextController",
                 "args": {
                   "key": "SearchValue"
                 }
+              },
+              {
+                "jsInvoke": "HumidorSearch.js",
+                "args": {
+                  "includeStateData": true,
+                  "switch": "onChange"
+                }
               }
-            },
-            "enabledBorder": {
-              "flutterType": "OutlineInputBorder",
-              "borderRadius": 10,
-              "borderSide": {
-                "flutterType": "BorderSide",
-                "color": "transparent",
-                "width": 0
+            ]
+          }
+        },
+        "enabledBorder": {
+          "flutterType": "OutlineInputBorder",
+          "borderRadius": 10,
+          "borderSide": {
+            "flutterType": "BorderSide",
+            "color": "transparent",
+            "width": 0
+          }
+        },
+        "focusedBorder": {
+          "flutterType": "OutlineInputBorder",
+          "borderRadius": 10,
+          "borderSide": {
+            "flutterType": "BorderSide",
+            "color": "transparent",
+            "width": 0
+          }
+        }
+      }
+    }
+  },
+  "body": {
+    "flutterType": "CustomScrollView",
+    "includeTopOffset": true,
+    "extraTopOffset": 15,
+    "onStateDataUpdate": true,
+    "children": [
+      {
+        "flutterType": "Container",
+        "margin": "10,0,10,0",
+        "height": 15,
+        "width": "infinity",
+        "decoration": {
+          "flutterType": "BoxDecoration",
+          "color": "schema:onBackground",
+          "borderRadius": "10,10,0,0"
+        }
+      },
+      {
+        "ChildrenExtension": "StateDataIterator",
+        "ifDataEmpty": {
+          "flutterType": "Container",
+          "margin": "10,0,10,0",
+          "padding": "15,0,15,0",
+          "color": "schema:onBackground",
+          "child": {
+            "flutterType": "Material",
+            "color": "schema:onBackground",
+            "child": {
+              "flutterType": "InkWell",
+              "customBorder": {
+                "flutterType": "RoundedRectangleBorder",
+                "borderRadius": 10
+              },
+              "child": {
+                "flutterType": "Row",
+                "children": [
+                  {
+                    "flutterType": "Expanded",
+                    "child": {
+                      "flutterType": "Text",
+                      "label": "Создать новую сигару",
+                      "style": {
+                        "flutterType": "TextStyle",
+                        "fontSize": 16
+                      }
+                    }
+                  },
+                  {
+                    "flutterType": "Icon",
+                    "src": "arrow_forward_ios_sharp",
+                    "size": 17,
+                    "color": "#999999"
+                  }
+                ]
               }
+            }
+          }
+        },
+        "key": "CigarList",
+        "Divider": {
+          "flutterType": "Column",
+          "children": [
+            {
+              "flutterType": "Container",
+              "margin": "10,0,10,0",
+              "height": "15",
+              "width": "infinity",
+              "color": "schema:onBackground"
             },
-            "focusedBorder": {
-              "flutterType": "OutlineInputBorder",
-              "borderRadius": 10,
-              "borderSide": {
-                "flutterType": "BorderSide",
-                "color": "transparent",
-                "width": 0
+            {
+              "flutterType": "Divider",
+              "height": 1
+            },
+            {
+              "flutterType": "Container",
+              "margin": "10,0,10,0",
+              "height": "15",
+              "width": "infinity",
+              "color": "schema:onBackground"
+            }
+          ]
+        },
+        "template": {
+          "flutterType": "Container",
+          "margin": "10,0,10,0",
+          "padding": "15,0,15,0",
+          "color": "schema:onBackground",
+          "child": {
+            "flutterType": "Material",
+            "color": "schema:onBackground",
+            "child": {
+              "flutterType": "InkWell",
+              "onTap": {
+                "jsInvoke": "HumidorSearch.js",
+                "args": {
+                  "cigar": "${value_data|jsonEncode()}",
+                  "uuid_cigar": "${uuid_data}",
+                  "uuid_humidor": "${pageArgument(humidor)}",
+                  "switch": "onSelect",
+                  "templateArguments": [
+                    "cigar",
+                    "uuid_cigar",
+                    "uuid_humidor"
+                  ]
+                }
+              },
+              "customBorder": {
+                "flutterType": "RoundedRectangleBorder",
+                "borderRadius": 10
+              },
+              "child": {
+                "flutterType": "Text",
+                "label": "Бренд: ${value_data.brand}; Название: ${value_data.line}; Формат: ${value_data.shape} - ${value_data.format}; Размер: ${value_data.size}; Поставщик: ${value_data.binder}; Состав: ${value_data.filter}; Покров: ${value_data.wrapper}; Страна: ${value_data.country}",
+                "style": {
+                  "flutterType": "TextStyle",
+                  "fontSize": 15
+                }
               }
             }
           }
         }
       },
       {
-        "flutterType": "Expanded",
-        "child": {
-          "flutterType": "GestureDetector",
-          "onTap": {
-            "sysInvoke": "HideKeyboard"
-          },
-          "child": {
-            "flutterType": "CustomScrollView",
-            "onStateDataUpdate": true,
-            "children": [
-              {
-                "flutterType": "Container",
-                "margin": "10,0,10,0",
-                "height": 15,
-                "width": "infinity",
-                "decoration": {
-                  "flutterType": "BoxDecoration",
-                  "color": "schema:onBackground",
-                  "borderRadius": "10,10,0,0"
-                }
-              },
-              {
-                "ChildrenExtension": "StateDataIterator",
-                "ifDataEmpty": {
-                  "flutterType": "Container",
-                  "margin": "10,0,10,0",
-                  "padding": "15,0,15,0",
-                  "color": "schema:onBackground",
-                  "child": {
-                    "flutterType": "Material",
-                    "color": "schema:onBackground",
-                    "child": {
-                      "flutterType": "InkWell",
-                      "customBorder": {
-                        "flutterType": "RoundedRectangleBorder",
-                        "borderRadius": 10
-                      },
-                      "child": {
-                        "flutterType": "Row",
-                        "children": [
-                          {
-                            "flutterType": "Expanded",
-                            "child": {
-                              "flutterType": "Text",
-                              "label": "Создать новую сигару",
-                              "style": {
-                                "flutterType": "TextStyle",
-                                "fontSize": 16
-                              }
-                            }
-                          },
-                          {
-                            "flutterType": "Icon",
-                            "src": "arrow_forward_ios_sharp",
-                            "size": 17,
-                            "color": "#999999"
-                          }
-                        ]
-                      }
-                    }
-                  }
-                },
-                "key": "CigarList",
-                "Divider": {
-                  "flutterType": "Column",
-                  "children": [
-                    {
-                      "flutterType": "Container",
-                      "margin": "10,0,10,0",
-                      "height": "15",
-                      "width": "infinity",
-                      "color": "schema:onBackground"
-                    },
-                    {
-                      "flutterType": "Divider",
-                      "height": 1
-                    },
-                    {
-                      "flutterType": "Container",
-                      "margin": "10,0,10,0",
-                      "height": "15",
-                      "width": "infinity",
-                      "color": "schema:onBackground"
-                    }
-                  ]
-                },
-                "template": {
-                  "flutterType": "Container",
-                  "margin": "10,0,10,0",
-                  "padding": "15,0,15,0",
-                  "color": "schema:onBackground",
-                  "child": {
-                    "flutterType": "Material",
-                    "color": "schema:onBackground",
-                    "child": {
-                      "flutterType": "InkWell",
-                      "onTap": {
-                        "jsInvoke": "HumidorSearch.js",
-                        "args": {
-                          "cigar": "${value_data}",
-                          "uuid_cigar": "${uuid_data}",
-                          "uuid_humidor": "${pageArgument(NavigatorPushHandlerArgs.humidor)}",
-                          "switch": "onSelect",
-                          "templateArguments": [
-                            "cigar",
-                            "uuid_cigar",
-                            "uuid_humidor"
-                          ]
-                        }
-                      },
-                      "customBorder": {
-                        "flutterType": "RoundedRectangleBorder",
-                        "borderRadius": 10
-                      },
-                      "child": {
-                        "flutterType": "Text",
-                        "label": "Бренд: ${value_data.brand}; Название: ${value_data.line}; Формат: ${value_data.shape} - ${value_data.format}; Размер: ${value_data.size}; Поставщик: ${value_data.binder}; Состав: ${value_data.filter}; Покров: ${value_data.wrapper}; Страна: ${value_data.country}",
-                        "style": {
-                          "flutterType": "TextStyle",
-                          "fontSize": 15
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              {
-                "flutterType": "Container",
-                "margin": "10,0,10,10",
-                "height": 15,
-                "width": "infinity",
-                "decoration": {
-                  "flutterType": "BoxDecoration",
-                  "color": "schema:onBackground",
-                  "borderRadius": "0,0,10,10"
-                }
-              }
-            ]
-          }
+        "flutterType": "Container",
+        "margin": "10,0,10,10",
+        "height": 15,
+        "width": "infinity",
+        "decoration": {
+          "flutterType": "BoxDecoration",
+          "color": "schema:onBackground",
+          "borderRadius": "0,0,10,10"
         }
       }
     ]

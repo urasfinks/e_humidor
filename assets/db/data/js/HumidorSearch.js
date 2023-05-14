@@ -8,7 +8,6 @@ if (bridge.args["switch"] == "constructor") {
 
 if (bridge.args["switch"] == "onSelect") {
     let cigar = JSON.parse(bridge.args["cigar"]);
-
     cigar["timestamp"] = new Date().getTime();
     cigar["uuid_cigar"] = bridge.args["uuid_cigar"];
 
