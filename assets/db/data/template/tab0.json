@@ -1,25 +1,25 @@
 {
-  "name": "user",
+  "name": "main",
   "tab": {
     "flutterType": "BottomNavigationBarItem",
-    "icon": {"flutterType": "Icon", "src": "account_circle"},
+    "icon": {"flutterType": "Icon", "src": "crop_5_4"},
     "label": "Home"
   },
   "content": {
     "flutterType": "Notify",
-    "link": {"template": "Account.json"},
+    "link": {"template": "HomePage.json"},
     "linkContainer": "root",
     "linkDefault": {
       "template": {
         "flutterType": "Scaffold",
         "appBar": {
           "flutterType": "AppBar",
-          "title": {"flutterType": "Text", "label": "Аккаунт"}
+          "title": {"flutterType": "Text", "label": "E-Humidor"}
         }
       }
     },
     "constructor": {
-      "jsInvoke": "Account.js",
+      "jsInvoke": "HomePage.js",
       "args": {
         "switch": "constructor"
       }
