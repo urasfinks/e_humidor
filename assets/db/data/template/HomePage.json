@@ -367,19 +367,19 @@
         "list": [
           {
             "label": "Последнии покуры",
-            "template": "ButtonArrow"
+            "templateWidgetSrc": "ButtonArrow"
           },
           {
             "label": "Календарь событий",
-            "template": "ButtonArrow"
+            "templateWidgetSrc": "ButtonArrow"
           },
           {
             "label": "Карта мест для курения",
-            "template": "ButtonArrow"
+            "templateWidgetSrc": "ButtonArrow"
           },
           {
             "label": "Архив",
-            "template": "ButtonArrow"
+            "templateWidgetSrc": "ButtonArrow"
           }
         ],
         "theme": "ButtonGroup"

@@ -3,13 +3,24 @@
     "flutterType": "Padding",
     "padding": "12,0,12,0",
     "child": {
+      "flutterType": "Template",
+      "src": "${templateWidgetSrc}",
+      "templateArguments": [
+        "src"
+      ]
+    }
+  },
+  "template_middle": {
+    "flutterType": "Padding",
+    "padding": "12,0,12,0",
+    "child": {
       "flutterType": "Material",
       "color": "schema:onBackground",
       "child": {
         "flutterType": "InkWell",
         "child": {
           "flutterType": "Template",
-          "src": "${template}",
+          "src": "${templateWidgetSrc}",
           "templateArguments": [
             "src"
           ]
@@ -31,11 +42,11 @@
         "flutterType": "InkWell",
         "customBorder": {
           "flutterType": "RoundedRectangleBorder",
-          "borderRadius": "0,0, 10,10"
+          "borderRadius": "0,0,10,10"
         },
         "child": {
           "flutterType": "Template",
-          "src": "${template}",
+          "src": "${templateWidgetSrc}",
           "templateArguments": [
             "src"
           ]
@@ -61,7 +72,33 @@
         },
         "child": {
           "flutterType": "Template",
-          "src": "${template}",
+          "src": "${templateWidgetSrc}",
+          "templateArguments": [
+            "src"
+          ]
+        }
+      }
+    }
+  },
+  "template_single": {
+    "flutterType": "Padding",
+    "padding": "12,0,12,0",
+    "child": {
+      "flutterType": "Material",
+      "color": "schema:onBackground",
+      "shape": {
+        "flutterType": "RoundedRectangleBorder",
+        "borderRadius": "10,10,10,10"
+      },
+      "child": {
+        "flutterType": "InkWell",
+        "customBorder": {
+          "flutterType": "RoundedRectangleBorder",
+          "borderRadius": "10,10,10,10"
+        },
+        "child": {
+          "flutterType": "Template",
+          "src": "${templateWidgetSrc}",
           "templateArguments": [
             "src"
           ]

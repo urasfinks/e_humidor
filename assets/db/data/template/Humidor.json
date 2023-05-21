@@ -61,8 +61,10 @@
         }
       },
       {
-        "ChildrenExtension": "StateDataIterator",
+        "ChildrenExtension": "Iterator",
+        "dataType": "state",
         "key": "CigarList",
+        "theme": "ButtonGroup",
         "ifDataEmpty": {
           "flutterType": "Column",
           "children": [
@@ -94,17 +96,17 @@
       {
         "ChildrenExtension": "Iterator",
         "dataType": "list",
+        "theme": "ButtonGroup",
         "list": [
           {
             "label": "История",
-            "template": "ButtonArrow"
+            "templateWidgetSrc": "ButtonArrow"
           },
           {
             "label": "Рулетка",
-            "template": "ButtonArrow"
+            "templateWidgetSrc": "ButtonArrow"
           }
-        ],
-        "theme": "ButtonGroup"
+        ]
       }
     ]
   },
