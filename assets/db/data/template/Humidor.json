@@ -92,128 +92,17 @@
         }
       },
       {
-        "flutterType": "Container",
-        "margin": "12,0,12,0",
-        "height": 12,
-        "width": "infinity",
-        "decoration": {
-          "flutterType": "BoxDecoration",
-          "color": "schema:onBackground",
-          "borderRadius": "10,10,0,0"
-        }
-      },
-      {
-        "flutterType": "Container",
-        "margin": "12,0,12,0",
-        "padding": "17,0,17,0",
-        "color": "schema:onBackground",
-        "child": {
-          "flutterType": "Material",
-          "color": "schema:onBackground",
-          "child": {
-            "flutterType": "InkWell",
-            "customBorder": {
-              "flutterType": "RoundedRectangleBorder",
-              "borderRadius": 10
-            },
-            "child": {
-              "flutterType": "Row",
-              "children": [
-                {
-                  "flutterType": "Expanded",
-                  "child": {
-                    "flutterType": "Text",
-                    "label": "История",
-                    "style": {
-                      "flutterType": "TextStyle",
-                      "fontSize": 16
-                    }
-                  }
-                },
-                {
-                  "flutterType": "Icon",
-                  "src": "arrow_forward_ios_sharp",
-                  "size": 17,
-                  "color": "#999999"
-                }
-              ]
-            }
-          }
-        }
-      },
-      {
-        "flutterType": "Column",
-        "children": [
+        "ChildrenExtension": "Iterator",
+        "dataType": "list",
+        "list": [
           {
-            "flutterType": "Container",
-            "margin": "12,0,12,0",
-            "height": "12",
-            "width": "infinity",
-            "color": "schema:onBackground"
+            "label": "История"
           },
           {
-            "flutterType": "Divider",
-            "color": "schema:background",
-            "height": 1
-          },
-          {
-            "flutterType": "Container",
-            "margin": "12,0,12,0",
-            "height": "12",
-            "width": "infinity",
-            "color": "schema:onBackground"
+            "label": "Рулетка"
           }
-        ]
-      },
-      {
-        "flutterType": "Container",
-        "margin": "12,0,12,0",
-        "padding": "17,0,17,0",
-        "color": "schema:onBackground",
-        "child": {
-          "flutterType": "Material",
-          "color": "schema:onBackground",
-          "child": {
-            "flutterType": "InkWell",
-            "customBorder": {
-              "flutterType": "RoundedRectangleBorder",
-              "borderRadius": 10
-            },
-            "child": {
-              "flutterType": "Row",
-              "children": [
-                {
-                  "flutterType": "Expanded",
-                  "child": {
-                    "flutterType": "Text",
-                    "label": "Рулетка",
-                    "style": {
-                      "flutterType": "TextStyle",
-                      "fontSize": 16
-                    }
-                  }
-                },
-                {
-                  "flutterType": "Icon",
-                  "src": "arrow_forward_ios_sharp",
-                  "size": 17,
-                  "color": "#999999"
-                }
-              ]
-            }
-          }
-        }
-      },
-      {
-        "flutterType": "Container",
-        "margin": "12,0,12,10",
-        "height": 12,
-        "width": "infinity",
-        "decoration": {
-          "flutterType": "BoxDecoration",
-          "color": "schema:onBackground",
-          "borderRadius": "0,0,10,10"
-        }
+        ],
+        "theme": "ButtonGroup"
       }
     ]
   },
