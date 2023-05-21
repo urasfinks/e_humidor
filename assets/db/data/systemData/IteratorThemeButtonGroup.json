@@ -18,6 +18,10 @@
       "color": "schema:onBackground",
       "child": {
         "flutterType": "InkWell",
+        "onTap": "${onTap|jsonEncode()}",
+        "templateArguments": [
+          "onTap"
+        ],
         "child": {
           "flutterType": "Template",
           "src": "${templateWidgetSrc}",
@@ -44,6 +48,10 @@
           "flutterType": "RoundedRectangleBorder",
           "borderRadius": "0,0,10,10"
         },
+        "onTap": "${onTap|jsonEncode()}",
+        "templateArguments": [
+          "onTap"
+        ],
         "child": {
           "flutterType": "Template",
           "src": "${templateWidgetSrc}",
@@ -70,6 +78,10 @@
           "flutterType": "RoundedRectangleBorder",
           "borderRadius": "10,10,0,0"
         },
+        "onTap": "${onTap|jsonEncode()}",
+        "templateArguments": [
+          "onTap"
+        ],
         "child": {
           "flutterType": "Template",
           "src": "${templateWidgetSrc}",
@@ -96,6 +108,10 @@
           "flutterType": "RoundedRectangleBorder",
           "borderRadius": "10,10,10,10"
         },
+        "onTap": "${onTap|jsonEncode()}",
+        "templateArguments": [
+          "onTap"
+        ],
         "child": {
           "flutterType": "Template",
           "src": "${templateWidgetSrc}",

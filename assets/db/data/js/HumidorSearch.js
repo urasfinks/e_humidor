@@ -1,7 +1,7 @@
 if (bridge.args["switch"] == "constructor") {
     bridge.call('DbQuery', {
         "stateKey": "CigarList",
-        "sql": "select * from data where key_data = ? order by id_data limit 20",
+        "sql": "select *, 'CigarSearchPreview' as templateWidgetSrc from data where key_data = ? order by id_data limit 20",
         "args": ["cigar"]
     });
 }
@@ -47,7 +47,7 @@ if (bridge.args["switch"] == "onChange") {
             args.push("%" + exp[i] + "%");
             subSql.push("value_data like ?");
         }
-        sql = "select * from data where key_data = ? and " + subSql.join(" and ") + " order by id_data limit 20";
+        sql = "select *, 'CigarSearchPreview' as templateWidgetSrc from data where key_data = ? and " + subSql.join(" and ") + " order by id_data limit 20";
     }
     bridge.call('DbQuery', {
         "stateKey": "CigarList",
@@ -55,3 +55,18 @@ if (bridge.args["switch"] == "onChange") {
         "args": args
     });
 }
+
+/*"onTap": {
+                "jsInvoke": "HumidorSearch.js",
+                "args": {
+                  "cigar": "${value_data|jsonEncode()}",
+                  "uuid_cigar": "${uuid_data}",
+                  "uuid_humidor": "${pageArgument(humidor)}",
+                  "switch": "onSelect",
+                  "templateArguments": [
+                    "cigar",
+                    "uuid_cigar",
+                    "uuid_humidor"
+                  ]
+                }
+              }*/

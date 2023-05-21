@@ -53,7 +53,8 @@
         }
       },
       {
-        "ChildrenExtension": "StateDataIterator",
+        "ChildrenExtension": "Iterator",
+        "dataType": "state",
         "key": "HumidorList",
         "ifDataEmpty": {
           "flutterType": "Margin",
@@ -367,7 +368,13 @@
         "list": [
           {
             "label": "Последнии покуры",
-            "templateWidgetSrc": "ButtonArrow"
+            "templateWidgetSrc": "ButtonArrow",
+            "onTap": {
+              "sysInvoke": "Alert",
+              "args": {
+                "label": "bzzz"
+              }
+            }
           },
           {
             "label": "Календарь событий",
