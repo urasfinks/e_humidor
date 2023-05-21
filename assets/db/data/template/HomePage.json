@@ -366,16 +366,20 @@
         "dataType": "list",
         "list": [
           {
-            "label": "Последнии покуры"
+            "label": "Последнии покуры",
+            "template": "ButtonArrow"
           },
           {
-            "label": "Календарь событий"
+            "label": "Календарь событий",
+            "template": "ButtonArrow"
           },
           {
-            "label": "Карта мест для курения"
+            "label": "Карта мест для курения",
+            "template": "ButtonArrow"
           },
           {
-            "label": "Архив"
+            "label": "Архив",
+            "template": "ButtonArrow"
           }
         ],
         "theme": "ButtonGroup"

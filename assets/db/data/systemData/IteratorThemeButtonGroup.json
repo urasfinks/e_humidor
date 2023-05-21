@@ -9,7 +9,10 @@
         "flutterType": "InkWell",
         "child": {
           "flutterType": "Template",
-          "src": "ButtonArrow"
+          "src": "${template}",
+          "templateArguments": [
+            "src"
+          ]
         }
       }
     }
@@ -32,7 +35,10 @@
         },
         "child": {
           "flutterType": "Template",
-          "src": "ButtonArrow"
+          "src": "${template}",
+          "templateArguments": [
+            "src"
+          ]
         }
       }
     }
@@ -55,7 +61,10 @@
         },
         "child": {
           "flutterType": "Template",
-          "src": "ButtonArrow"
+          "src": "${template}",
+          "templateArguments": [
+            "src"
+          ]
         }
       }
     }

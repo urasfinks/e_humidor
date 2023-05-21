@@ -96,10 +96,12 @@
         "dataType": "list",
         "list": [
           {
-            "label": "История"
+            "label": "История",
+            "template": "ButtonArrow"
           },
           {
-            "label": "Рулетка"
+            "label": "Рулетка",
+            "template": "ButtonArrow"
           }
         ],
         "theme": "ButtonGroup"
