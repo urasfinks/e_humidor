@@ -18,9 +18,9 @@
       },
       {
         "flutterType": "Icon",
-        "src": "arrow_forward_ios_sharp",
-        "size": 17,
-        "color": "#999999"
+        "src": "${iconSrc,arrow_forward_ios_sharp}",
+        "size": "${iconSize,17}",
+        "color": "${iconColor,#999999}"
       }
     ]
   }

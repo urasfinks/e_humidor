@@ -100,11 +100,11 @@
         "list": [
           {
             "label": "История",
-            "templateWidgetSrc": "ButtonArrow"
+            "templateWidgetSrc": "ButtonIcon"
           },
           {
             "label": "Рулетка",
-            "templateWidgetSrc": "ButtonArrow"
+            "templateWidgetSrc": "ButtonIcon"
           }
         ]
       }

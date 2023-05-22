@@ -368,7 +368,7 @@
         "list": [
           {
             "label": "Последнии покуры",
-            "templateWidgetSrc": "ButtonArrow",
+            "templateWidgetSrc": "ButtonIcon",
             "onTap": {
               "sysInvoke": "Alert",
               "args": {
@@ -378,15 +378,15 @@
           },
           {
             "label": "Календарь событий",
-            "templateWidgetSrc": "ButtonArrow"
+            "templateWidgetSrc": "ButtonIcon"
           },
           {
             "label": "Карта мест для курения",
-            "templateWidgetSrc": "ButtonArrow"
+            "templateWidgetSrc": "ButtonIcon"
           },
           {
             "label": "Архив",
-            "templateWidgetSrc": "ButtonArrow"
+            "templateWidgetSrc": "ButtonIcon"
           }
         ],
         "theme": "ButtonGroup"
