@@ -12,31 +12,27 @@
     }
   },
   "body": {
-    "flutterType": "GestureDetector",
-    "onTap": {
-      "sysInvoke": "HideKeyboard"
-    },
-    "child": {
-      "flutterType": "CustomScrollView",
-      "onStateDataUpdate": true,
-      "children": [
-        {
-          "ChildrenExtension": "StateDataSwitch",
-          "key": "SwitchKey",
-          "children": [
-            {
-              "case": "default",
-              "flutterType": "Template",
-              "src": "AccountSignIn"
-            },
-            {
-              "case": "auth",
-              "flutterType": "Template",
-              "src": "AccountSignOut"
-            }
-          ]
-        }
-      ]
-    }
+    "flutterType": "CustomScrollView",
+    "extraTopOffset": 20,
+    "extraBottomOffset": 20,
+    "onStateDataUpdate": true,
+    "children": [
+      {
+        "ChildrenExtension": "StateDataSwitch",
+        "key": "SwitchKey",
+        "children": [
+          {
+            "case": "default",
+            "flutterType": "Template",
+            "src": "AccountSignIn"
+          },
+          {
+            "case": "auth",
+            "flutterType": "Template",
+            "src": "AccountSignOut"
+          }
+        ]
+      }
+    ]
   }
 }
