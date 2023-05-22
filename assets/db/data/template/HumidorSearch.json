@@ -93,6 +93,23 @@
         "dataType": "state",
         "key": "CigarList",
         "theme": "ButtonGroup",
+        "extendDataElement": {
+          "templateWidgetSrc": "CigarSearchPreview",
+          "onTap": {
+            "jsInvoke": "HumidorSearch.js",
+            "args": {
+              "cigar": "${value_data|jsonEncode()}",
+              "uuid_cigar": "${uuid_data}",
+              "uuid_humidor": "${pageArgument(humidor)}",
+              "switch": "onSelect",
+              "templateArguments": [
+                "cigar",
+                "uuid_cigar",
+                "uuid_humidor"
+              ]
+            }
+          }
+        },
         "ifDataEmpty": {
           "flutterType": "Container",
           "margin": "10,0,10,0",
