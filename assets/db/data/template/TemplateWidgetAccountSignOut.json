@@ -1,4 +1,36 @@
 {
-  "flutterType": "Text",
-  "label": "${storage(mail)|partHideEmail()}"
+  "flutterType": "Column",
+  "children": [
+    {
+      "ChildrenExtension": "Iterator",
+      "theme": "ButtonGroup",
+      "dataType": "list",
+      "list": [
+        {
+          "label": "${storage(mail)|partHideEmail()}",
+          "iconSrc": "mail_outline",
+          "iconSize": 20,
+          "templateWidgetSrc": "ButtonIcon",
+          "templateArguments": [
+            "label"
+          ]
+        },
+        {
+          "label": "Загружено данных",
+          "templateWidgetSrc": "TextStatistic"
+        },
+        {
+          "label": "Личная информация",
+          "templateWidgetSrc": "TextStatistic"
+        },
+        {
+          "label": "Выход",
+          "iconSrc": "exit_to_app",
+          "iconSize": 20,
+          "iconColor": "schema:inversePrimary",
+          "templateWidgetSrc": "ButtonIcon"
+        }
+      ]
+    }
+  ]
 }
