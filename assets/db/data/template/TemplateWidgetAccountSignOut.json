@@ -1,6 +1,22 @@
 {
   "flutterType": "Column",
+  "onStateDataUpdate": true,
+  "crossAxisAlignment": "start",
   "children": [
+    {
+      "flutterType": "Container",
+      "margin": "22,0,22,20",
+      "child": {
+        "flutterType": "Text",
+        "label": "Личная информация",
+        "style": {
+          "flutterType": "TextStyle",
+          "fontSize": 17,
+          "fontWeight": "bold",
+          "color": "schema:secondary"
+        }
+      }
+    },
     {
       "ChildrenExtension": "Iterator",
       "theme": "ButtonGroup",
@@ -17,14 +33,49 @@
         },
         {
           "label": "Загружено данных",
-          "templateWidgetSrc": "TextStatistic"
+          "labelStatistic": "${state(countAllData)}",
+          "templateWidgetSrc": "TextStatistic",
+          "templateArguments": [
+            "labelStatistic"
+          ]
         },
         {
           "label": "Личная информация",
-          "templateWidgetSrc": "TextStatistic"
+          "labelStatistic": "${state(countPersonData)}",
+          "templateWidgetSrc": "TextStatistic",
+          "templateArguments": [
+            "labelStatistic"
+          ]
         },
         {
-          "label": "Выход",
+          "label": "Не синхронизировано",
+          "labelStatistic": "${state(countSyncData)}",
+          "templateWidgetSrc": "TextStatistic",
+          "templateArguments": [
+            "labelStatistic"
+          ]
+        },
+        {
+          "label": "Дата последней синхронизации",
+          "labelStatistic": "${timestamp()|timestampToDate(dd.MM.yyyy hh:mm:ss)}",
+          "templateWidgetSrc": "TextStatistic",
+          "templateArguments": [
+            "labelStatistic"
+          ]
+        }
+      ]
+    },
+    {
+      "flutterType": "SizedBox",
+      "height": 20
+    },
+    {
+      "ChildrenExtension": "Iterator",
+      "theme": "ButtonGroup",
+      "dataType": "list",
+      "list": [
+        {
+          "label": "Выйти из аккаунта",
           "iconSrc": "exit_to_app",
           "iconSize": 20,
           "iconColor": "schema:inversePrimary",

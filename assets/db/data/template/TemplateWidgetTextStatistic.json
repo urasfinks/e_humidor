@@ -32,7 +32,7 @@
             "fontSize": 12,
             "fontWeight": "bold"
           },
-          "label": "${timestamp()|timestampToDate(dd.MM.yyyy h:m:s)}"
+          "label": "${labelStatistic}"
         }
       }
     ]

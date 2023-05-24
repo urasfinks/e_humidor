@@ -4,13 +4,33 @@ if (bridge.args["switch"] == "constructor") {
         "default": "false"
     })["isAuth"];
 
-    console.log("Hello constructor: "+isAuth);
+    console.log("Hello constructor: " + isAuth);
 
     bridge.call('SetStateData', {
         "key": "SwitchKey",
         "value": isAuth == "true" ? "auth" : "default"
     });
 
+    bridge.call('DbQuery', {
+        "sql": "select count(*) as count from data UNION ALL select count(*) as count from data where type_data = ? UNION ALL select count(*) as count from data where type_data = ? and revision_data = 0",
+        "args": ["userDataRSync", "userDataRSync"],
+        "onFetch": {
+            "jsInvoke": "Account.js",
+            "args": {
+                "switch": "onFetchCountAllData"
+            }
+        }
+    });
+}
+
+if (bridge.args["switch"] == "onFetchCountAllData") {
+    bridge.call('SetStateData', {
+        "map": {
+            "countAllData": bridge.args["fetchDb"][0]["count"],
+            "countPersonData": bridge.args["fetchDb"][1]["count"],
+            "countSyncData": bridge.args["fetchDb"][1]["count"]
+        }
+    });
 }
 
 if (bridge.args["switch"] == "GetCode") {
